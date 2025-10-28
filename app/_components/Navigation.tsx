@@ -21,7 +21,6 @@ export default function Navigation() {
             <a href="#products" className="text-gray-700 hover:text-purple-700 transition">Sản phẩm</a>
             <a href="#about" className="text-gray-700 hover:text-purple-700 transition">Về chúng tôi</a>
             <a href="#contact" className="text-gray-700 hover:text-purple-700 transition">Liên hệ</a>
-            <a href="#news" className="text-gray-700 hover:text-purple-700 transition">Tin tức</a>
           </div>
 
           {/* Icons */}

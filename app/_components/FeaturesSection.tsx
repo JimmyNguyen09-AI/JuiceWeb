@@ -55,7 +55,7 @@ const item: Variants = {
 
 export default function FeaturesSection() {
   return (
-    <section aria-labelledby="features-heading" className="relative py-24 overflow-hidden">
+    <section aria-labelledby="features-heading" className="relative py-24 overflow-hidden" id='about'>
       {/* Decorative background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-700" />
       <div aria-hidden="true" className="absolute -top-32 -left-32 h-64 w-64 rounded-full blur-3xl opacity-30 bg-fuchsia-400" />
@@ -65,7 +65,7 @@ export default function FeaturesSection() {
         {/* Heading */}
         <div className="text-center mb-14">
           <p className="inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white/90 backdrop-blur">
-            Câu chuyện MANEP
+            Về chúng tôi - MANEP
           </p>
           <h2 id="features-heading" className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
             Vì sao khách hàng chọn chúng tôi
