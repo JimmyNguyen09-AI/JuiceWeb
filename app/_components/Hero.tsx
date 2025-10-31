@@ -48,7 +48,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.05 }}
                 className="mt-3 text-4xl font-bold leading-tight text-white drop-shadow-xl sm:text-5xl lg:text-6xl"
               >
-                MANEP DAILY - 
+                MANEP - 
                 <br />
                 Cho ngày trôi thật nhẹ
               </motion.h1>
