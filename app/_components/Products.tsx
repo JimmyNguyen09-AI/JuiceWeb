@@ -6,36 +6,40 @@ import { useState } from 'react';
 
 type SKU = 'daily' | 'care';
 
-const PRODUCTS: Record<SKU, {
+type Product = {
   name: string;
   volume: string;
   image: string;
   rating: number;
+  price: string; // <— NEW
   highlights: string[];
   ingredients: string[];
   nutrition: { label: string; value: string }[];
   usage: string[];
   storage: string[];
   claims: string[];
-}> = {
+};
+
+const PRODUCTS: Record<SKU, Product> = {
   daily: {
-    name: 'MANEP Nho Daily',
+    name: 'MANEP Mận Daily',
     volume: '180 ml',
     image: '/180ml.png',
     rating: 5,
+    price: '25K', // <— NEW
     highlights: [
       '100% vị nho tươi tự nhiên',
       'Hỗ trợ tiêu hoá mỗi ngày',
       'Không đường tinh luyện',
     ],
     ingredients: [
-      'Nước ép nho tím (80%) – giàu chất xơ và hợp chất chống oxy hoá tự nhiên',
+      'Nước ép mận tím (80%) – giàu chất xơ và hợp chất chống oxy hoá tự nhiên',
       'Inulin (chất xơ hoà tan) – hỗ trợ nhu động ruột',
       'Magie tự nhiên – cân bằng điện giải, hỗ trợ co bóp ruột',
       'Nước cốt chanh – vị tươi mát, chống oxy hoá',
       'Vitamin C (từ quả acerola)',
       'Chất tạo ngọt tự nhiên Stevia (0 kcal)',
-      'Chiết xuất hạt nho (ít) – tăng ổn định sản phẩm',
+      'Chiết xuất hạt mận (ít) – tăng ổn định sản phẩm',
     ],
     nutrition: [
       { label: 'Năng lượng', value: '≈55–60 kcal' },
@@ -56,24 +60,21 @@ const PRODUCTS: Record<SKU, {
       'Sau khi mở nắp, giữ lạnh và dùng trong 24 giờ.',
       'Thức uống bổ trợ dinh dưỡng, không phải thuốc.',
     ],
-    claims: [
-      'Nguồn gốc nguyên liệu rõ ràng',
-      'Không chất bảo quản',
-      'Không màu tổng hợp',
-    ],
+    claims: ['Nguồn gốc nguyên liệu rõ ràng', 'Không chất bảo quản', 'Không màu tổng hợp'],
   },
   care: {
-    name: 'MANEP Nho Care+',
+    name: 'MANEP Mận Care+',
     volume: '350 ml',
     image: '/350ml.png',
     rating: 5,
+    price: '40K', // <— NEW
     highlights: [
       'Công thức nâng cao: chất xơ kép + probiotics',
       'Thanh lọc dịu nhẹ với chiết xuất lô hội',
       'Tăng cường vitamin C, K, Mg',
     ],
     ingredients: [
-      'Nước ép nho tím (70%)',
+      'Nước ép mận tím (70%)',
       'Inulin + Oligofructose (chất xơ kép)',
       'Probiotics (Bifidobacterium / Lactobacillus rhamnosus) – ≥ 1 tỷ CFU',
       'Chiết xuất lô hội (liều nhẹ an toàn)',
@@ -103,11 +104,7 @@ const PRODUCTS: Record<SKU, {
       'Sau khi mở nắp, giữ lạnh và dùng trong 24 giờ.',
       'Thức uống bổ trợ dinh dưỡng, không phải thuốc.',
     ],
-    claims: [
-      'Không đường tinh luyện',
-      'Không chất bảo quản',
-      '100% thành phần thiên nhiên',
-    ],
+    claims: ['Không đường tinh luyện', 'Không chất bảo quản', '100% thành phần thiên nhiên'],
   },
 };
 
@@ -130,7 +127,9 @@ export default function Products() {
             type="button"
             onClick={() => setActive('daily')}
             className={`rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
-              active === 'daily' ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg scale-105' : 'text-gray-600 hover:text-gray-900'
+              active === 'daily'
+                ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg scale-105'
+                : 'text-gray-600 hover:text-gray-900'
             }`}
             aria-pressed={active === 'daily'}
           >
@@ -140,7 +139,9 @@ export default function Products() {
             type="button"
             onClick={() => setActive('care')}
             className={`rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
-              active === 'care' ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg scale-105' : 'text-gray-600 hover:text-gray-900'
+              active === 'care'
+                ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg scale-105'
+                : 'text-gray-600 hover:text-gray-900'
             }`}
             aria-pressed={active === 'care'}
           >
@@ -171,11 +172,16 @@ export default function Products() {
                 <div>
                   <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{p.name}</h3>
                   <p className="text-lg text-purple-600 font-medium">Dung tích: {p.volume}</p>
-                </div>
-                <div className="flex shrink-0 text-yellow-400" aria-label={`Đánh giá ${p.rating} sao`}>
-                  {Array.from({ length: p.rating }).map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-current drop-shadow-sm" aria-hidden="true" />
-                  ))}
+
+                  {/* PRICE + 5 STARS — NEW */}
+                  <div className="mt-3 inline-flex items-center gap-3 rounded-full bg-purple-50 px-4 py-2 ring-1 ring-purple-200">
+                    <span className="text-xl font-extrabold text-purple-700">Giá: {p.price}</span>
+                    <span className="flex text-yellow-400" aria-label="Đánh giá 5 sao">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-current drop-shadow-sm" aria-hidden="true" />
+                      ))}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -194,7 +200,10 @@ export default function Products() {
               {/* Claims */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {p.claims.map((c) => (
-                  <span key={c} className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 text-sm font-semibold text-purple-700 ring-2 ring-purple-200/50">
+                  <span
+                    key={c}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 text-sm font-semibold text-purple-700 ring-2 ring-purple-200/50"
+                  >
                     <ShieldCheck className="w-4 h-4" />
                     {c}
                   </span>
@@ -203,10 +212,16 @@ export default function Products() {
 
               {/* CTA */}
               <div className="mt-8 flex flex-wrap gap-4">
-                <button type="button" className="flex-1 min-w-[200px] rounded-full bg-gradient-to-r from-purple-600 to-purple-700 px-8 py-4 text-white font-bold hover:from-purple-700 hover:to-purple-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <button
+                  type="button"
+                  className="flex-1 min-w-[200px] rounded-full bg-gradient-to-r from-purple-600 to-purple-700 px-8 py-4 text-white font-bold hover:from-purple-700 hover:to-purple-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
                   Thêm vào giỏ
                 </button>
-                <a href="#contact" className="flex-1 min-w-[200px] text-center rounded-full border-2 border-purple-600 px-8 py-4 text-purple-700 font-bold hover:bg-purple-50 transition-all">
+                <a
+                  href="#contact"
+                  className="flex-1 min-w-[200px] text-center rounded-full border-2 border-purple-600 px-8 py-4 text-purple-700 font-bold hover:bg-purple-50 transition-all"
+                >
                   Nhận tư vấn
                 </a>
               </div>
@@ -231,7 +246,10 @@ export default function Products() {
               <Section title="Thông tin dinh dưỡng (ước tính)">
                 <div className="grid gap-3">
                   {p.nutrition.map((n) => (
-                    <div key={n.label} className="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+                    <div
+                      key={n.label}
+                      className="flex items-center justify-between bg-gray-50 rounded-lg px-4 py-3 border border-gray-100"
+                    >
                       <span className="text-gray-600 font-medium">{n.label}</span>
                       <span className="font-bold text-purple-700">{n.value}</span>
                     </div>
@@ -258,7 +276,8 @@ export default function Products() {
                 </div>
                 <div className="mt-3 p-4 bg-gray-50 rounded-lg">
                   <p className="text-xs text-gray-600">
-                    <strong>Nhà sản xuất:</strong> Công ty TNHH Thực phẩm Dinh dưỡng Việt An<br />
+                    <strong>Nhà sản xuất:</strong> Công ty TNHH Thực phẩm Dinh dưỡng Việt An
+                    <br />
                     <strong>Xuất xứ:</strong> Việt Nam
                   </p>
                 </div>
@@ -271,7 +290,15 @@ export default function Products() {
   );
 }
 
-function Section({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+function Section({
+  title,
+  children,
+  defaultOpen = false,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div className="mt-0">
@@ -284,7 +311,9 @@ function Section({ title, children, defaultOpen = false }: { title: string; chil
         <span className="flex items-center gap-2 font-bold text-gray-900 text-lg">
           <Info className="w-5 h-5 text-purple-600" /> {title}
         </span>
-        <ChevronDown className={`w-5 h-5 text-purple-600 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-5 h-5 text-purple-600 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+        />
       </button>
       {open && <div className="animate-fadeIn">{children}</div>}
     </div>

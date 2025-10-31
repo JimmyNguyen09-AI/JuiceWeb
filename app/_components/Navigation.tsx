@@ -20,7 +20,7 @@ export default function Navigation() {
             <a href="#home" className="text-gray-700 hover:text-purple-700 transition">Trang chủ</a>
             <a href="#products" className="text-gray-700 hover:text-purple-700 transition">Sản phẩm</a>
             <a href="#about" className="text-gray-700 hover:text-purple-700 transition">Về chúng tôi</a>
-            <a href="#contact" className="text-gray-700 hover:text-purple-700 transition">Liên hệ</a>
+      
           </div>
 
           {/* Icons */}
@@ -64,7 +64,7 @@ export default function Navigation() {
             <a href="#home" className="block py-2 text-gray-700 hover:text-purple-700">Trang chủ</a>
             <a href="#products" className="block py-2 text-gray-700 hover:text-purple-700">Sản phẩm</a>
             <a href="#about" className="block py-2 text-gray-700 hover:text-purple-700">Về chúng tôi</a>
-            <a href="#contact" className="block py-2 text-gray-700 hover:text-purple-700">Liên hệ</a>
+        
           
 
             {/* Mobile actions */}
