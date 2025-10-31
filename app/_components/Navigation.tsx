@@ -15,7 +15,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <div className="flex items-center">
   <Image
-    src="/Gemini_Generated_Image_nkza7bnkza7bnkza.png"
+    src="/gogo.png"
     alt="MANEP Logo"
     width={80}      
     height={80}
