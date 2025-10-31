@@ -8,7 +8,7 @@ import Products from "./_components/Products";
 
 export default function ManepWebsite() {
   return (
-    <div className="font-sans">
+    <div className="font-serif" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <Navigation/>
       <HeroSection/>
       <FeaturesSection/>

@@ -9,15 +9,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">MANEP</h3>
-            <p className="text-purple-200">Nước ép trái cây tươi nguyên chất, mang đến sức khỏe cho mọi nhà</p>
+            <p className="text-purple-200">Nước ép mận tươi nguyên chất, mang đến sức khỏe cho mọi nhà</p>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Sản phẩm</h4>
             <ul className="space-y-2 text-purple-200">
-              <li><a href="#" className="hover:text-white transition">Nước ép mận</a></li>
-              <li><a href="#" className="hover:text-white transition">Nước ép nho</a></li>
-              <li><a href="#" className="hover:text-white transition">Nước ép mix berry</a></li>
-              <li><a href="#" className="hover:text-white transition">Nước ép táo</a></li>
+              <li><a href="#" className="hover:text-white transition">MANEP Daily</a></li>
+              <li><a href="#" className="hover:text-white transition">MANEP Care +</a></li>
+       
             </ul>
           </div>
           <div>

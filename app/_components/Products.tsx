@@ -11,7 +11,7 @@ type Product = {
   volume: string;
   image: string;
   rating: number;
-  price: string; // <— NEW
+  price: string; 
   highlights: string[];
   ingredients: string[];
   nutrition: { label: string; value: string }[];
@@ -24,11 +24,11 @@ const PRODUCTS: Record<SKU, Product> = {
   daily: {
     name: 'MANEP Mận Daily',
     volume: '180 ml',
-    image: '/180ml.png',
+    image: '/180ml1.png',
     rating: 5,
-    price: '25K', // <— NEW
+    price: '25K',
     highlights: [
-      '100% vị nho tươi tự nhiên',
+      '100% vị mận tươi tự nhiên',
       'Hỗ trợ tiêu hoá mỗi ngày',
       'Không đường tinh luyện',
     ],
@@ -65,9 +65,9 @@ const PRODUCTS: Record<SKU, Product> = {
   care: {
     name: 'MANEP Mận Care+',
     volume: '350 ml',
-    image: '/350ml.png',
+    image: '/350ml1.png',
     rating: 5,
-    price: '40K', // <— NEW
+    price: '40K', 
     highlights: [
       'Công thức nâng cao: chất xơ kép + probiotics',
       'Thanh lọc dịu nhẹ với chiết xuất lô hội',
@@ -117,7 +117,7 @@ export default function Products() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Sản phẩm MANEP Nho</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Sản phẩm MANEP</h2>
           <p className="text-gray-600 text-lg lg:text-xl">Chỉ 2 lựa chọn thiết yếu: Daily 180ml & Care+ 350ml</p>
         </div>
 
@@ -173,7 +173,6 @@ export default function Products() {
                   <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{p.name}</h3>
                   <p className="text-lg text-purple-600 font-medium">Dung tích: {p.volume}</p>
 
-                  {/* PRICE + 5 STARS — NEW */}
                   <div className="mt-3 inline-flex items-center gap-3 rounded-full bg-purple-50 px-4 py-2 ring-1 ring-purple-200">
                     <span className="text-xl font-extrabold text-purple-700">Giá: {p.price}</span>
                     <span className="flex text-yellow-400" aria-label="Đánh giá 5 sao">

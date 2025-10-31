@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { ShoppingCart, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,17 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-purple-700">MANEP</h1>
+            <div className="flex items-center">
+  <Image
+    src="/logo.png"
+    alt="MANEP Logo"
+    width={80}      
+    height={80}
+    priority
+    className="object-cover"
+  />
+</div>
+
           </div>
 
           {/* Desktop Menu */}
