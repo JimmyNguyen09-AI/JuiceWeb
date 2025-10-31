@@ -22,7 +22,7 @@ type Product = {
 
 const PRODUCTS: Record<SKU, Product> = {
   daily: {
-    name: 'MANEP Mận Daily',
+    name: 'MANEP Daily',
     volume: '180 ml',
     image: '/180ml1.png',
     rating: 5,
@@ -63,7 +63,7 @@ const PRODUCTS: Record<SKU, Product> = {
     claims: ['Nguồn gốc nguyên liệu rõ ràng', 'Không chất bảo quản', 'Không màu tổng hợp'],
   },
   care: {
-    name: 'MANEP Mận Care+',
+    name: 'MANEP Care+',
     volume: '350 ml',
     image: '/350ml1.png',
     rating: 5,
