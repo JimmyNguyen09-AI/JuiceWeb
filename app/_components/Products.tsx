@@ -26,7 +26,7 @@ const PRODUCTS: Record<SKU, Product> = {
     volume: '180 ml',
     image: '/gen-h-180.jpg',
     rating: 5,
-    price: '35.000₫',
+    price: '25.000₫',
     highlights: [
       '100% vị mận tươi tự nhiên',
       'Hỗ trợ tiêu hoá mỗi ngày',
@@ -67,7 +67,7 @@ const PRODUCTS: Record<SKU, Product> = {
     volume: '350 ml',
     image: '/gen-h-350.jpg',
     rating: 5,
-    price: '50.000₫', 
+    price: '40.000₫', 
     highlights: [
       'Công thức nâng cao: chất xơ kép + probiotics',
       'Thanh lọc dịu nhẹ với chiết xuất lô hội',
