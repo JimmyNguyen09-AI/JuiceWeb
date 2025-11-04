@@ -24,7 +24,7 @@ const PRODUCTS: Record<SKU, Product> = {
   daily: {
     name: 'MANEP Daily',
     volume: '180 ml',
-    image: '/gen-h-z7187723030759_865dbb596186c8660066f1ea3cddcec3.jpg',
+    image: '/gen-h-180.jpg',
     rating: 5,
     price: '25.000₫',
     highlights: [
