@@ -24,7 +24,7 @@ const PRODUCTS: Record<SKU, Product> = {
   daily: {
     name: 'MANEP Daily',
     volume: '180 ml',
-    image: '/180ml1.png',
+    image: '/gen-h-180.jpg',
     rating: 5,
     price: '35.000₫',
     highlights: [
@@ -65,7 +65,7 @@ const PRODUCTS: Record<SKU, Product> = {
   care: {
     name: 'MANEP Care+',
     volume: '350 ml',
-    image: '/350ml1.png',
+    image: '/gen-h-350.jpg',
     rating: 5,
     price: '50.000₫', 
     highlights: [
